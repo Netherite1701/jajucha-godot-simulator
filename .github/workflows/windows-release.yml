@@ -78,7 +78,7 @@ jobs:
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
           & $python tests/notebook_host_smoke.py -v
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
-  - name: Export app and create Velopack release packages
+      - name: Export app and create Velopack release packages
         shell: pwsh
         run: ./scripts/package_release.ps1 -GodotExecutable '.cache/godot-exporter/Godot_v4.7.2-stable_win64_console.exe' -TemplateExecutable 'export_templates/windows_release_x86_64.exe'
       - uses: actions/upload-artifact@v4
@@ -102,9 +102,9 @@ jobs:
         run: ./scripts/verify_release_qualification.ps1
       - uses: actions/download-artifact@v4
         with:
-          name: jajucha-godot-simulator-win-x64-v0.1.0-candidate
+          name: jajucha-godot-simulator-win-x64-v0.1.0
           path: dist
-      - name: Publish the built candidate without rebuilding
+      - name: Publish the validated build without rebuilding
         shell: pwsh
         env:
           GH_TOKEN: ${{ github.token }}
