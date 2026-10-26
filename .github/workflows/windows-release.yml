@@ -37,8 +37,7 @@ jobs:
           New-Item -ItemType Directory -Force -Path $cache, 'export_templates' | Out-Null
           $base = 'https://github.com/godotengine/godot/releases/download/4.7.2-stable'
           $downloads = @(
-            @{ Name = 'Godot_v4.7.2-stable_win64_console.exe.zip' },
-            @{ Name = 'Godot_v4.7.2-stable_win64.exe.zip' },
+            @{ Name = 'Godot_v4.7.2-stable_win64.exe.zip'; Hash = '731980F9608D61333E5BAF54A2EF17210ACC7A538446C0CB9969F002ACA1E953' },
             @{ Name = 'Godot_v4.7.2-stable_export_templates.tpz'; Hash = 'F298490B8D44D934BE425A5A65A51BF15F422428B229A06A6E11D9FFEA248011' }
           )
           foreach ($item in $downloads) {
@@ -47,14 +46,8 @@ jobs:
             $actual = (Get-FileHash -Algorithm SHA256 $file).Hash
             if ($item.Hash -and $actual -ne $item.Hash) { throw "Hash mismatch: $($item.Name) $actual" }
           }
-          Expand-Archive (Join-Path $cache 'Godot_v4.7.2-stable_win64_console.exe.zip') (Join-Path $cache 'console') -Force
           Expand-Archive (Join-Path $cache 'Godot_v4.7.2-stable_win64.exe.zip') (Join-Path $cache 'windowed') -Force
-          Copy-Item (Join-Path $cache 'console/Godot_v4.7.2-stable_win64_console.exe') (Join-Path $cache 'Godot_v4.7.2-stable_win64_console.exe') -Force
           Copy-Item (Join-Path $cache 'windowed/Godot_v4.7.2-stable_win64.exe') (Join-Path $cache 'Godot_v4.7.2-stable_win64.exe') -Force
-          $consoleHash = (Get-FileHash -Algorithm SHA256 (Join-Path $cache 'Godot_v4.7.2-stable_win64_console.exe')).Hash
-          $windowedHash = (Get-FileHash -Algorithm SHA256 (Join-Path $cache 'Godot_v4.7.2-stable_win64.exe')).Hash
-          if ($consoleHash -ne 'C8F0A6BC45A19B33541501E57F6F7CD972AB18453743266339D495CBBE846643') { throw "Godot console binary checksum mismatch: $consoleHash" }
-          if ($windowedHash -ne 'AB1824F85BFD8E0E4128182C000C4003A3E042245B2967848D089B2A04B22424') { throw "Godot windowed binary checksum mismatch: $windowedHash" }
           tar -xf (Join-Path $cache 'Godot_v4.7.2-stable_export_templates.tpz') -C $cache
           Copy-Item (Join-Path $cache 'templates/windows_release_x86_64.exe') 'export_templates/windows_release_x86_64.exe' -Force
       - name: Build private CPython 3.12.15 runtime from source
