@@ -44,7 +44,7 @@
     },
     "target_repository_and_publication": {
       "passed": false,
-      "evidence": "Public repository exists and source commit dcc4c55 is pushed to main; v0.1.0 assets are being uploaded as a draft because remaining qualification gates are not all passed."
+      "evidence": "Public source is on main and all 15 assets are in the draft release https://github.com/Netherite1701/jajucha-godot-simulator/releases/tag/untagged-a3cd3ba728126a625467; stable publication is pending remaining qualification gates."
     }
   },
   "current_candidate": null,
@@ -56,6 +56,7 @@
     "status": "v0.1.0 package uploaded as GitHub draft; stable publication pending qualification",
     "report": "release/VERIFICATION_REPORT.md",
     "github_repository": "https://github.com/Netherite1701/jajucha-godot-simulator",
-    "source_commit": "dcc4c55"
+    "source_commit": "3eb54c3",
+    "draft_release_url": "https://github.com/Netherite1701/jajucha-godot-simulator/releases/tag/untagged-a3cd3ba728126a625467"
   }
 }
