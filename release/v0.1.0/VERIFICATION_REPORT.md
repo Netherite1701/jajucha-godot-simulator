@@ -21,9 +21,10 @@ Compact test evidence is in `evidence/installed-verification-2026-10-26/`. The f
 
 - A separate clean Windows account, standard-user profile, and offline first launch were not verified.
 - Data preservation through uninstall/reinstall was not repeated on this exact Setup.
-- Two-version updater recovery remains untested; the repository has just been created and has no prior published version.
+- Two-version updater recovery remains untested; this draft has no earlier stable release to upgrade from.
 - Redistribution permission for the original manual-derived track artwork is not documented.
-- The target public repository has been created. This report records qualification state before the release assets are published.
+- The public repository exists and the source is pushed to main. The v0.1.0 assets are being uploaded as a draft; stable publication is pending the failed and unverified gates below.
 
 The package and checksums are in this `v0.1.0` folder. See `qualification.json` for the exact gate status.
+
 

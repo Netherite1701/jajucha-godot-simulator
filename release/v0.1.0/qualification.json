@@ -44,7 +44,7 @@
     },
     "target_repository_and_publication": {
       "passed": false,
-      "evidence": "GitHub API returned 404 for Netherite1701/jajucha-godot-simulator; no public repository or release is available."
+      "evidence": "Public repository exists and source commit dcc4c55 is pushed to main; v0.1.0 assets are being uploaded as a draft because remaining qualification gates are not all passed."
     }
   },
   "current_candidate": null,
@@ -53,7 +53,9 @@
     "built_at": "2026-10-26 13:19 local",
     "installed": true,
     "publicly_published": false,
-    "status": "final local v0.1.0 package",
-    "report": "release/VERIFICATION_REPORT.md"
+    "status": "v0.1.0 package uploaded as GitHub draft; stable publication pending qualification",
+    "report": "release/VERIFICATION_REPORT.md",
+    "github_repository": "https://github.com/Netherite1701/jajucha-godot-simulator",
+    "source_commit": "dcc4c55"
   }
 }
