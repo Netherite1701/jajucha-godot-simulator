@@ -1,0 +1,8 @@
+{
+	"center_off_road_samples": 0,
+	"center_off_road_times_s": [],
+	"footprint_touch_times_s": [],
+	"footprint_touching_grass_or_red_curb_samples": 0,
+	"method": "Recorded ground-truth trajectory sampled against the actual 900 mm panel artwork and rotations; used for verification only.",
+	"samples": 687
+}

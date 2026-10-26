@@ -1,0 +1,74 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_main"]
+[ext_resource type="Script" path="res://scripts/simulator_dashboard.gd" id="2_dashboard"]
+[ext_resource type="PackedScene" path="res://scenes/course_assembly.tscn" id="3_course"]
+
+[sub_resource type="Environment" id="Environment_main"]
+background_mode = 1
+background_color = Color(0.0352941, 0.0470588, 0.0627451, 1)
+ambient_light_source = 3
+ambient_light_color = Color(0.65098, 0.701961, 0.741176, 1)
+ambient_light_energy = 0.42
+
+[node name="JajuchaSimulator" type="Node3D"]
+script = ExtResource("1_main")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 10
+
+[node name="World" type="Node3D" parent="."]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="World"]
+environment = SubResource("Environment_main")
+
+[node name="Course" parent="World" instance=ExtResource("3_course")]
+
+[node name="Obstacles" type="Node3D" parent="World"]
+
+[node name="Vehicle" type="CharacterBody3D" parent="World"]
+collision_layer = 2
+collision_mask = 5
+up_direction = Vector3(0, 1, 0)
+floor_max_angle = 0.610865
+floor_snap_length = 0.065
+safe_margin = 0.005
+
+[node name="SensorRig" type="Node3D" parent="World/Vehicle"]
+
+[node name="Viewport_Left" type="SubViewport" parent="World/Vehicle/SensorRig"]
+size = Vector2i(640, 400)
+render_target_update_mode = 4
+transparent_bg = false
+own_world_3d = false
+
+[node name="CameraLeft" type="Camera3D" parent="World/Vehicle/SensorRig/Viewport_Left"]
+current = true
+
+[node name="Viewport_Center" type="SubViewport" parent="World/Vehicle/SensorRig"]
+size = Vector2i(640, 400)
+render_target_update_mode = 4
+transparent_bg = false
+own_world_3d = false
+
+[node name="CameraCenter" type="Camera3D" parent="World/Vehicle/SensorRig/Viewport_Center"]
+
+[node name="Viewport_Right" type="SubViewport" parent="World/Vehicle/SensorRig"]
+size = Vector2i(640, 400)
+render_target_update_mode = 4
+transparent_bg = false
+own_world_3d = false
+
+[node name="CameraRight" type="Camera3D" parent="World/Vehicle/SensorRig/Viewport_Right"]
+
+[node name="LidarSensor" type="Node3D" parent="World/Vehicle/SensorRig"]
+
+[node name="HUD" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("2_dashboard")

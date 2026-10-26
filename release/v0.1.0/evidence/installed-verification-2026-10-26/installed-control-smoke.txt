@@ -1,0 +1,21 @@
+[13:22:46] [INFO] --
+[13:22:46] [INFO] Starting Velopack Updater (1.2.161)
+[13:22:46] [INFO]     Location: "C:\\dev\\jajucha-simulator\\build\\release-candidate-notebook-completion\\installed\\current\\Update.exe"
+[13:22:46] [INFO]     CWD: "C:\\dev\\jajucha-simulator\\build\\release-candidate-notebook-completion\\installed\\current"
+[13:22:46] [INFO]     Verbose: false
+[13:22:46] [INFO]     Silent: false
+[13:22:46] [INFO]     Root Directory: None
+[13:22:46] [INFO]     Log File: "C:\\Users\\user\\AppData\\Local\\velopack\\velopack_Netherite1701.JajuchaGodotSimulator.log"
+[13:22:46] [INFO]     Context: IAmUpdateExe
+[13:22:46] [INFO] Command: Start
+[13:22:46] [INFO]     Wait: NoWait
+[13:22:46] [INFO]     Exe Name: None
+[13:22:46] [INFO]     Exe Args: Some(["--self-test-controls"])
+[13:22:46] [INFO] Auto-locating app manifest...
+[13:22:46] [INFO] Root directory 'C:\dev\jajucha-simulator\build\release-candidate-notebook-completion\installed\current' writable: true
+[13:22:46] [INFO] Using root packages directory: C:\dev\jajucha-simulator\build\release-candidate-notebook-completion\installed\current\packages
+[13:22:46] [INFO] About to launch: '"C:\\dev\\jajucha-simulator\\build\\release-candidate-notebook-completion\\installed\\current\\current\\JajuchaGodotSimulator.exe"' in dir '"C:\\dev\\jajucha-simulator\\build\\release-candidate-notebook-completion\\installed\\current\\current"'
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+OpenGL API 3.3.0 NVIDIA 610.88 - Compatibility - Using Device: NVIDIA - NVIDIA GeForce RTX 4070 SUPER
+
+CONTROL_INPUT_SMOKE_OK code_workspace_input_isolated=1 shortcuts_isolated=1 live_kernel_f8=1 queue_cleared=1 host_exit=1 kernel_exit=1

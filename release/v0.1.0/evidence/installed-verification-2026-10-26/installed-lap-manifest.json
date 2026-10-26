@@ -1,0 +1,32 @@
+{
+	"calibration_sha256": "6c9be61731c748963dd6f753848ff61d465a49d5fe604bb7fb19a7474e83069c",
+	"camera_channels": 3,
+	"course_layout_sha256": "4c6eee42a7eef075ff42c16490f0bee0fc1799e4605f5584da7be482a14c346d",
+	"execution_backend": "bundled IPython notebook kernel",
+	"finish_rule": "Cross the start line in the forward direction after all seven ordered course gates and more than 30 m, within 0.22 m laterally and 30 degrees of start heading",
+	"godot": {
+		"build": "official",
+		"hash": "ed1daf0bf001b61586d9930840f2f1394092c079",
+		"hex": 263938,
+		"major": 4,
+		"minor": 7,
+		"patch": 2,
+		"status": "stable",
+		"string": "4.7.2-stable (official)",
+		"timestamp": 0
+	},
+	"panel_artwork_sha256": "c4da43c3e36bfe7f5ada0eb3d753f048f066dd3ed377c87460d43791b96c62a0",
+	"resolution_px": [
+		640,
+		400
+	],
+	"start_heading_rad": -1.57079637050629,
+	"start_xz_m": [
+		-0.450000286102295,
+		2.69999980926514
+	],
+	"user_supplied_controller_sha256": "71bef94864c91d1286ed586d216938e21750335bf23747c852f36b83de726136",
+	"verified_controller_sha256": "71bef94864c91d1286ed586d216938e21750335bf23747c852f36b83de726136",
+	"verified_notebook_cell_sha256": "71bef94864c91d1286ed586d216938e21750335bf23747c852f36b83de726136",
+	"verified_notebook_path": "C:/dev/jajucha-simulator/build/release-candidate-notebook-completion/installed/current/current/notebooks/Verified_Lap_Controller.ipynb"
+}

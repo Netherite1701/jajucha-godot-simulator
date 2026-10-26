@@ -1,0 +1,67 @@
+{
+  "source": "C:\\dev\\jajucha_code\\config\\bev_center.json plus docs/slam_simulator.md and docs/jajucha_model_api.md",
+  "coordinate_frame": {
+    "origin": "rear-axle center ground projection",
+    "vehicle_axes": {"x": "forward", "y": "left", "z": "up"},
+    "distance_unit": "m",
+    "image_size_wh_px": [640, 400]
+  },
+  "camera": {
+    "fx": 310.70,
+    "fy": 309.58,
+    "cx": 309.52,
+    "cy": 222.31,
+    "K": [[310.70, 0.0, 309.52], [0.0, 309.58, 222.31], [0.0, 0.0, 1.0]],
+    "distortion_order": ["k1", "k2", "p1", "p2", "k3"],
+    "dist": [0.084568, -0.072728, -0.000606, 0.004212, 0.0],
+    "orientation_rvec_rad": [1.203605, -1.24103, 1.213053],
+    "orientation_status": "legacy center camera Rodrigues rotation converted into Godot axes",
+    "distortion_status": "Brown-Conrady raw lens distortion applied by sensor-output shader before the supplied OpenCV undistortion"
+  },
+  "rig": {
+    "vehicle_width_m": {"value": 0.1776, "status": "measured from user-supplied photograph"},
+    "tire_width_m": {"value": 0.027, "status": "measured from user-supplied photograph"},
+    "camera_setback_from_front_m": {"value": 0.053, "status": "measured from annotated user photograph"},
+    "lidar_setback_from_front_m": {"value": 0.150, "status": "measured from annotated user photograph"},
+    "adjacent_camera_spacing_m": {"value": 0.029, "status": "derived from front face labels; lens center not physically verified"},
+    "front_edge_from_rear_axle_m": {"value": 0.18869332307, "status": "inferred from archived center-camera extrinsic plus setback"},
+    "camera_height_calibrated_m": {"value": 0.09900903, "status": "archived working-run optical calibration"},
+    "camera_height_photo_estimate_m": {"value": 0.075, "status": "conflicting annotated photograph estimate; unresolved"},
+    "lidar_scan_height_m": {"value": 0.075, "status": "provisional photo estimate; not calibrated against lidar returns"},
+    "wheelbase_m": {"value": 0.183, "status": "unconfirmed copied controller reference; editable estimate"},
+    "steering_limit_deg": {"value": 35.0, "status": "tuned in the simulator so the supplied controller can negotiate the manual track; physical maximum remains unverified"},
+    "speed_cap_mps": {"value": 0.6156, "status": "requested command cap, not measured vehicle speed"},
+    "acceleration_mps2": {"value": 0.60, "status": "unconfirmed simulation parameter"},
+    "braking_mps2": {"value": 1.50, "status": "unconfirmed simulation parameter"},
+    "stereo_baseline_m": {"value": 0.058, "status": "derived from adjacent 29 mm camera spacing; outer lens centers unverified"},
+    "tire_diameter_m": {"value": null, "status": "not confirmed; placeholder visible on the simulated mesh"},
+    "body_length_m": {"value": null, "status": "not confirmed; estimated visually on the simulated mesh"},
+    "side_intrinsics_status": "provisional copy of center-camera K and distortion; no left/right calibration supplied",
+    "side_orientation_status": "provisional copy of center-camera orientation",
+    "camera_model_limitation": "Off-axis frustum and calibrated lens shader; side cameras share the center optics and lack independent calibration",
+    "vehicle_model_limitation": "controlled bicycle steering model, visual wheels; no verified wheel radius, suspension, drivetrain, or tire model"
+  },
+  "lidar": {
+    "sample_count": 409,
+    "minimum_range_m": 0.05,
+    "maximum_range_m": 12.0,
+    "angle_zero": "vehicle forward",
+    "angle_direction": "clockwise in the public Jajucha array",
+    "range_unit": "mm in Python API",
+    "rotation_center_status": "longitudinal position derived from provisional front-edge offset"
+  },
+  "track": {
+    "tile_size_m": [0.9, 0.9],
+    "panel_thickness_m": 0.003,
+    "layout_cells": [11, 6],
+    "assembly_bounds_m": [9.9, 5.4],
+    "occupied_panel_cells": 41,
+    "tunnel_entrance_mm": [390, 220],
+    "tunnel_panel_dimensions_mm": {"short": 98, "long": 260, "height": 220},
+    "ramp_height_m": {"value": 0.1, "status": "manual", "rise_run": "manual specifies a 900 x 900 x 100 mm flat block cut into a triangular slope; simulated 900 mm run is derived from the square block"},
+    "sign_dimensions_mm": {"pit": [320, 130], "starting_light": [80, 160], "start_light_shroud": [70, 130, 40]},
+    "cube_obstacle_edge_m": 0.15,
+    "tunnel_passage_depth_m": {"value": 0.26, "status": "reconstructed orientation of the documented 260 x 98 mm upper sheet; portal is 390 x 220 mm"},
+    "course_map_status": "the printable assembly diagram locates 41 tiles; the displayed tile map uses these locations and blank cells"
+  }
+}

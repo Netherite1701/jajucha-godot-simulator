@@ -1,0 +1,59 @@
+{
+  "target": "windows-10-11-x64",
+  "version": "0.1.0",
+  "gates": {
+    "source_smoke_tests": {
+      "evidence": "Final Setup passed the packaged structural self-test 7/7 checks. Evidence: evidence/installed-verification-2026-10-26/packaged-self-test.json.",
+      "passed": true
+    },
+    "bundled_python_31215": {
+      "passed": true,
+      "evidence": "The exact final Setup host suite passed 5/5. Evidence: evidence/installed-verification-2026-10-26/installed-host-smoke.txt."
+    },
+    "notebook_end_to_end": {
+      "passed": true,
+      "evidence": "The exact final Setup notebook UI E2E suite passed. Evidence: evidence/installed-verification-2026-10-26/installed-notebook-e2e.json."
+    },
+    "control_and_shutdown": {
+      "passed": true,
+      "evidence": "The exact final Setup control and kernel shutdown smoke passed. Evidence: evidence/installed-verification-2026-10-26/installed-control-smoke.txt."
+    },
+    "fresh_profile_install_offline": {
+      "passed": false,
+      "evidence": "The exact Setup installed and launched from an isolated C: location, but a separate clean Windows account and offline first launch remain unverified."
+    },
+    "user_data_survives_uninstall": {
+      "evidence": "Uninstall/reinstall preservation was verified on an earlier Setup, not repeated on the exact final Setup.",
+      "passed": false
+    },
+    "update_and_recovery": {
+      "passed": false,
+      "evidence": "Two-version updater recovery remains untested. GitHub API returned 404 for Netherite1701/jajucha-godot-simulator."
+    },
+    "installed_lap_and_road_coverage": {
+      "passed": false,
+      "evidence": "Road coverage passed for 687 samples with zero off-road/curb contacts, but the unchanged supplied controller stalled at 5/7 checkpoints and did not finish. Evidence: evidence/installed-verification-2026-10-26/installed-lap-result.json and installed-lap-road-coverage.json."
+    },
+    "artwork_redistribution_rights": {
+      "passed": false,
+      "evidence": "The original manual-derived panel artwork is retained as requested; the manual has no explicit redistribution license and permission is undocumented."
+    },
+    "third_party_notices": {
+      "passed": true,
+      "evidence": "THIRD_PARTY_NOTICES.md, CPython LICENSE.txt, and per-package license files for the locked runtime inventory are included in the candidate bundle."
+    },
+    "target_repository_and_publication": {
+      "passed": false,
+      "evidence": "GitHub API returned 404 for Netherite1701/jajucha-godot-simulator; no public repository or release is available."
+    }
+  },
+  "current_candidate": null,
+  "final_local_release": {
+    "setup_sha256": "ad037d946b75e6b17773ee3db6b9f3bbb6a7504d42f44618f79dd7eb939523eb",
+    "built_at": "2026-10-26 13:19 local",
+    "installed": true,
+    "publicly_published": false,
+    "status": "final local v0.1.0 package",
+    "report": "release/VERIFICATION_REPORT.md"
+  }
+}

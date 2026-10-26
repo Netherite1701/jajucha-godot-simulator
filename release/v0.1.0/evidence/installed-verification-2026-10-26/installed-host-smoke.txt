@@ -1,0 +1,10 @@
+test_image_exception_and_interrupt (__main__.NotebookHostSmoke.test_image_exception_and_interrupt) ... ok
+test_input_output_and_control (__main__.NotebookHostSmoke.test_input_output_and_control) ... ok
+test_persistent_api_connection_handles_many_control_calls (__main__.NotebookHostSmoke.test_persistent_api_connection_handles_many_control_calls) ... ok
+test_persistent_state_and_jchm_sensor_api (__main__.NotebookHostSmoke.test_persistent_state_and_jchm_sensor_api) ... ok
+test_simulation_time_import_and_restart (__main__.NotebookHostSmoke.test_simulation_time_import_and_restart) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 18.802s
+
+OK

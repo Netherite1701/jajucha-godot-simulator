@@ -1,0 +1,53 @@
+# Godot/editor output
+.godot/
+.godot_user/
+*.tmp
+*.log
+
+# Runtime user data and recordings
+.cache/
+.config/
+captures/
+recordings/
+*.jsonl
+.venv-release/
+release/evidence/
+
+# Python caches and local environments
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+
+# Build/export artifacts
+build/
+dist/
+publish/
+Releases/
+export_templates/
+launcher/bin/
+launcher/obj/
+
+# Reference documents and personal media
+*.pdf
+*.jpg
+*.jpeg
+*.heic
+*.mov
+*.mp4
+
+# Local machine configuration
+GODOT_PATH.md
+
+# User-provided controller source is preserved locally but not redistributed
+python_bridge/user_supplied_original.txt
+
+# Personal reference photos and their Godot import metadata
+docs/KakaoTalk*
+docs/*.jpg.import
+
+# Release binaries are uploaded as GitHub Release assets, not Git objects
+release/v0.1.0/*.exe
+release/v0.1.0/*.nupkg
+release/v0.1.0/*.zip

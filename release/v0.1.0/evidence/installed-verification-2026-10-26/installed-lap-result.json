@@ -1,0 +1,21 @@
+{
+	"commands": 685,
+	"distance_m": 26.3287595911825,
+	"elapsed_s": 83.5250000000021,
+	"gates": [
+		"right_side",
+		"upper_right",
+		"top_straight",
+		"left_side",
+		"lower_left_hairpin"
+	],
+	"gates_passed": 5,
+	"output_dir": "C:\\dev\\jajucha-simulator\\build\\release-candidate-notebook-completion\\installed-test-data\\lap1/evidence/laps/run_20261026T132340",
+	"result": "LAP_STALLED",
+	"sim_time_s": 84.5000000000021,
+	"speed_mps": 0.0,
+	"steering": 0.0,
+	"x_m": -3.16024160385132,
+	"yaw_deg": 7.40043568740159,
+	"z_m": 0.251515567302704
+}

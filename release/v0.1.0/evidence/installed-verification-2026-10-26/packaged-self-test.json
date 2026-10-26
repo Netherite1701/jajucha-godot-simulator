@@ -1,0 +1,25 @@
+{
+	"checks": {
+		"bundled_python_exists": true,
+		"lidar_has_409_rays": true,
+		"starter_notebooks_present": true,
+		"three_640x400_cameras": true,
+		"track_has_41_cells": true,
+		"track_tile_pitch_900_mm": true,
+		"vehicle_starts_on_road": true
+	},
+	"godot": {
+		"build": "official",
+		"hash": "ed1daf0bf001b61586d9930840f2f1394092c079",
+		"hex": 263938,
+		"major": 4,
+		"minor": 7,
+		"patch": 2,
+		"status": "stable",
+		"string": "4.7.2-stable (official)",
+		"timestamp": 0
+	},
+	"passed": true,
+	"version": "0.1.0",
+	"written_at": "2026-10-26 04:20:02"
+}

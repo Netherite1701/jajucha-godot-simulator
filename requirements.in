@@ -1,0 +1,7 @@
+# Python 3.12 compatibility is intentional: the vision stack uses NumPy 1.x.
+numpy==1.26.4
+opencv-python-headless==4.11.0.86
+ipython==9.17.1
+ipykernel==7.4.0
+jupyter-client==8.10.0
+nbformat==5.11.1

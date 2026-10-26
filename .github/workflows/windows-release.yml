@@ -1,0 +1,113 @@
+name: Windows v0.1.0 release build
+
+on:
+  workflow_dispatch:
+    inputs:
+      publish_stable:
+        description: Publish v0.1.0 after every qualification gate is evidenced
+        required: true
+        type: boolean
+        default: false
+  push:
+    tags:
+      - "v0.1.0"
+
+permissions:
+  contents: read
+
+jobs:
+  build-and-verify:
+    runs-on: windows-2022
+    timeout-minutes: 120
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 10.0.302
+      - uses: actions/setup-python@v5
+        with:
+          python-version: 3.12.4
+      - name: Download pinned Godot 4.7.2 tools and templates
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = 'Stop'
+          $cache = '.cache/godot-exporter'
+          New-Item -ItemType Directory -Force -Path $cache, 'export_templates' | Out-Null
+          $base = 'https://github.com/godotengine/godot/releases/download/4.7.2-stable'
+          $downloads = @(
+            @{ Name = 'Godot_v4.7.2-stable_win64_console.exe.zip' },
+            @{ Name = 'Godot_v4.7.2-stable_win64.exe.zip' },
+            @{ Name = 'Godot_v4.7.2-stable_export_templates.tpz'; Hash = 'F298490B8D44D934BE425A5A65A51BF15F422428B229A06A6E11D9FFEA248011' }
+          )
+          foreach ($item in $downloads) {
+            $file = Join-Path $cache $item.Name
+            Invoke-WebRequest "$base/$($item.Name)" -OutFile $file
+            $actual = (Get-FileHash -Algorithm SHA256 $file).Hash
+            if ($item.Hash -and $actual -ne $item.Hash) { throw "Hash mismatch: $($item.Name) $actual" }
+          }
+          Expand-Archive (Join-Path $cache 'Godot_v4.7.2-stable_win64_console.exe.zip') (Join-Path $cache 'console') -Force
+          Expand-Archive (Join-Path $cache 'Godot_v4.7.2-stable_win64.exe.zip') (Join-Path $cache 'windowed') -Force
+          Copy-Item (Join-Path $cache 'console/Godot_v4.7.2-stable_win64_console.exe') (Join-Path $cache 'Godot_v4.7.2-stable_win64_console.exe') -Force
+          Copy-Item (Join-Path $cache 'windowed/Godot_v4.7.2-stable_win64.exe') (Join-Path $cache 'Godot_v4.7.2-stable_win64.exe') -Force
+          $consoleHash = (Get-FileHash -Algorithm SHA256 (Join-Path $cache 'Godot_v4.7.2-stable_win64_console.exe')).Hash
+          $windowedHash = (Get-FileHash -Algorithm SHA256 (Join-Path $cache 'Godot_v4.7.2-stable_win64.exe')).Hash
+          if ($consoleHash -ne 'C8F0A6BC45A19B33541501E57F6F7CD972AB18453743266339D495CBBE846643') { throw "Godot console binary checksum mismatch: $consoleHash" }
+          if ($windowedHash -ne 'AB1824F85BFD8E0E4128182C000C4003A3E042245B2967848D089B2A04B22424') { throw "Godot windowed binary checksum mismatch: $windowedHash" }
+          tar -xf (Join-Path $cache 'Godot_v4.7.2-stable_export_templates.tpz') -C $cache
+          Copy-Item (Join-Path $cache 'templates/windows_release_x86_64.exe') 'export_templates/windows_release_x86_64.exe' -Force
+      - name: Build private CPython 3.12.15 runtime from source
+        shell: pwsh
+        run: ./scripts/build_python_runtime.ps1
+      - name: Verify simulator dimensions and notebook UI
+        shell: pwsh
+        run: |
+          $godot = (Resolve-Path '.cache/godot-exporter/Godot_v4.7.2-stable_win64_console.exe').Path
+          & $godot --headless --path . --script res://tests/smoke_test.gd
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          & $godot --headless --path . --script res://tests/notebook_workspace_smoke.gd
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          & $godot --headless --path . --script res://tests/notebook_storage_smoke.gd
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+      - name: Verify bundled IPython protocol and kernel lifecycle
+        shell: pwsh
+        run: |
+          $python = (Resolve-Path 'build/runtime/python/python.exe').Path
+          & $python -m py_compile python_bridge/notebook_host.py python_bridge/jchm.py python_bridge/run_python_controller.py
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          & $python tests/notebook_host_smoke.py -v
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+  - name: Export app and create Velopack release packages
+        shell: pwsh
+        run: ./scripts/package_release.ps1 -GodotExecutable '.cache/godot-exporter/Godot_v4.7.2-stable_win64_console.exe' -TemplateExecutable 'export_templates/windows_release_x86_64.exe'
+      - uses: actions/upload-artifact@v4
+        with:
+          name: jajucha-godot-simulator-win-x64-v0.1.0
+          path: dist/*
+          if-no-files-found: error
+          retention-days: 30
+
+  publish-stable:
+    if: github.event_name == 'workflow_dispatch' && inputs.publish_stable
+    needs: build-and-verify
+    runs-on: windows-2022
+    environment: release
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Require every documented qualification gate
+        shell: pwsh
+        run: ./scripts/verify_release_qualification.ps1
+      - uses: actions/download-artifact@v4
+        with:
+          name: jajucha-godot-simulator-win-x64-v0.1.0-candidate
+          path: dist
+      - name: Publish the built candidate without rebuilding
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          $version = (Get-Content 'release/qualification.json' -Raw | ConvertFrom-Json).version
+          gh release create "v$version" dist/* --repo Netherite1701/jajucha-godot-simulator --title "Jajucha Godot Simulator v$version" --notes-file docs/RELEASE_NOTES_0.1.0.md --latest

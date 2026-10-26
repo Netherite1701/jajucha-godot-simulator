@@ -1,0 +1,292 @@
+[gd_resource type="MeshLibrary" format=3]
+
+[ext_resource type="Texture2D" path="res://assets/panels/A.png" id="1_xi76a"]
+[ext_resource type="Texture2D" path="res://assets/panels/B.png" id="2_a6ijx"]
+[ext_resource type="Texture2D" path="res://assets/panels/L.png" id="3_31arf"]
+[ext_resource type="Texture2D" path="res://assets/panels/M.png" id="4_inel4"]
+[ext_resource type="Texture2D" path="res://assets/panels/N.png" id="5_pmxjw"]
+[ext_resource type="Texture2D" path="res://assets/panels/O.png" id="6_3f0af"]
+[ext_resource type="Texture2D" path="res://assets/panels/P.png" id="7_dcpt7"]
+[ext_resource type="Texture2D" path="res://assets/panels/Q.png" id="8_uc0h0"]
+[ext_resource type="Texture2D" path="res://assets/panels/C.png" id="9_np4hc"]
+[ext_resource type="Texture2D" path="res://assets/panels/D.png" id="10_1kyw1"]
+[ext_resource type="Texture2D" path="res://assets/panels/F.png" id="11_dfhww"]
+[ext_resource type="Texture2D" path="res://assets/panels/G.png" id="12_18vhc"]
+[ext_resource type="Texture2D" path="res://assets/panels/H.png" id="13_bo6y6"]
+[ext_resource type="Texture2D" path="res://assets/panels/I.png" id="14_e7vwu"]
+[ext_resource type="Texture2D" path="res://assets/panels/J.png" id="15_t6wex"]
+[ext_resource type="Texture2D" path="res://assets/panels/K.png" id="16_s4tn3"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_el3u2"]
+albedo_texture = ExtResource("1_xi76a")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_vlw0u"]
+material = SubResource("StandardMaterial3D_el3u2")
+size = Vector2(0.9, 0.9)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_c1ivs"]
+size = Vector3(0.9, 0.003, 0.9)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kbhet"]
+albedo_texture = ExtResource("2_a6ijx")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_qxrel"]
+material = SubResource("StandardMaterial3D_kbhet")
+size = Vector2(0.9, 0.9)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6t8st"]
+size = Vector3(0.9, 0.003, 0.9)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_04mmb"]
+albedo_texture = ExtResource("3_31arf")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_amvsy"]
+material = SubResource("StandardMaterial3D_04mmb")
+size = Vector2(0.9, 0.9)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pxskq"]
+size = Vector3(0.9, 0.003, 0.9)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qcejs"]
+albedo_texture = ExtResource("4_inel4")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_rbx2c"]
+material = SubResource("StandardMaterial3D_qcejs")
+size = Vector2(0.9, 0.9)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7kxe5"]
+size = Vector3(0.9, 0.003, 0.9)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hoivm"]
+albedo_texture = ExtResource("5_pmxjw")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_h7wcp"]
+material = SubResource("StandardMaterial3D_hoivm")
+size = Vector2(0.9, 0.9)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7lvxe"]
+size = Vector3(0.9, 0.003, 0.9)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6lywy"]
+albedo_texture = ExtResource("6_3f0af")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_cfmag"]
+material = SubResource("StandardMaterial3D_6lywy")
+size = Vector2(0.9, 0.9)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_g4cup"]
+size = Vector3(0.9, 0.003, 0.9)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o52sv"]
+albedo_texture = ExtResource("7_dcpt7")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_vvruf"]
+material = SubResource("StandardMaterial3D_o52sv")
+size = Vector2(0.9, 0.9)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_362kn"]
+size = Vector3(0.9, 0.003, 0.9)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2lfx1"]
+albedo_texture = ExtResource("8_uc0h0")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_r315i"]
+material = SubResource("StandardMaterial3D_2lfx1")
+size = Vector2(0.9, 0.9)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3qr7w"]
+size = Vector3(0.9, 0.003, 0.9)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wc0de"]
+albedo_texture = ExtResource("9_np4hc")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_fhlcs"]
+material = SubResource("StandardMaterial3D_wc0de")
+size = Vector2(0.9, 0.9)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_swlj6"]
+size = Vector3(0.9, 0.003, 0.9)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pqnpi"]
+albedo_texture = ExtResource("10_1kyw1")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_iuovp"]
+material = SubResource("StandardMaterial3D_pqnpi")
+size = Vector2(0.9, 0.9)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jowpy"]
+size = Vector3(0.9, 0.003, 0.9)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pw3lt"]
+albedo_texture = ExtResource("11_dfhww")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_roef3"]
+material = SubResource("StandardMaterial3D_pw3lt")
+size = Vector2(0.9, 0.9)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_utred"]
+size = Vector3(0.9, 0.003, 0.9)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mygtk"]
+albedo_texture = ExtResource("12_18vhc")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_uvgxx"]
+material = SubResource("StandardMaterial3D_mygtk")
+size = Vector2(0.9, 0.9)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pj37w"]
+size = Vector3(0.9, 0.003, 0.9)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kxyb2"]
+albedo_texture = ExtResource("13_bo6y6")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_2vgn3"]
+material = SubResource("StandardMaterial3D_kxyb2")
+size = Vector2(0.9, 0.9)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8v80l"]
+size = Vector3(0.9, 0.003, 0.9)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pj5re"]
+albedo_texture = ExtResource("14_e7vwu")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_gw0vl"]
+material = SubResource("StandardMaterial3D_pj5re")
+size = Vector2(0.9, 0.9)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hcg2h"]
+size = Vector3(0.9, 0.003, 0.9)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u28if"]
+albedo_texture = ExtResource("15_t6wex")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_1idep"]
+material = SubResource("StandardMaterial3D_u28if")
+size = Vector2(0.9, 0.9)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7no5o"]
+size = Vector3(0.9, 0.003, 0.9)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d56v4"]
+albedo_texture = ExtResource("16_s4tn3")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_6aj00"]
+material = SubResource("StandardMaterial3D_d56v4")
+size = Vector2(0.9, 0.9)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mdf26"]
+size = Vector3(0.9, 0.003, 0.9)
+
+[resource]
+item/0/name = "Panel A (900 x 900 mm)"
+item/0/mesh = SubResource("PlaneMesh_vlw0u")
+item/0/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/0/mesh_cast_shadow = 1
+item/0/shapes = [SubResource("BoxShape3D_c1ivs"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0015, 0)]
+item/0/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/0/navigation_layers = 1
+item/1/name = "Panel B (900 x 900 mm)"
+item/1/mesh = SubResource("PlaneMesh_qxrel")
+item/1/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/1/mesh_cast_shadow = 1
+item/1/shapes = [SubResource("BoxShape3D_6t8st"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0015, 0)]
+item/1/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/1/navigation_layers = 1
+item/2/name = "Panel C (900 x 900 mm)"
+item/2/mesh = SubResource("PlaneMesh_fhlcs")
+item/2/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/2/mesh_cast_shadow = 1
+item/2/shapes = [SubResource("BoxShape3D_swlj6"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0015, 0)]
+item/2/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/2/navigation_layers = 1
+item/3/name = "Panel D (900 x 900 mm)"
+item/3/mesh = SubResource("PlaneMesh_iuovp")
+item/3/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/3/mesh_cast_shadow = 1
+item/3/shapes = [SubResource("BoxShape3D_jowpy"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0015, 0)]
+item/3/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/3/navigation_layers = 1
+item/4/name = "Panel F (900 x 900 mm)"
+item/4/mesh = SubResource("PlaneMesh_roef3")
+item/4/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/4/mesh_cast_shadow = 1
+item/4/shapes = [SubResource("BoxShape3D_utred"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0015, 0)]
+item/4/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/4/navigation_layers = 1
+item/5/name = "Panel G (900 x 900 mm)"
+item/5/mesh = SubResource("PlaneMesh_uvgxx")
+item/5/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/5/mesh_cast_shadow = 1
+item/5/shapes = [SubResource("BoxShape3D_pj37w"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0015, 0)]
+item/5/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/5/navigation_layers = 1
+item/6/name = "Panel H (900 x 900 mm)"
+item/6/mesh = SubResource("PlaneMesh_2vgn3")
+item/6/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/6/mesh_cast_shadow = 1
+item/6/shapes = [SubResource("BoxShape3D_8v80l"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0015, 0)]
+item/6/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/6/navigation_layers = 1
+item/7/name = "Panel I (900 x 900 mm)"
+item/7/mesh = SubResource("PlaneMesh_gw0vl")
+item/7/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/7/mesh_cast_shadow = 1
+item/7/shapes = [SubResource("BoxShape3D_hcg2h"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0015, 0)]
+item/7/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/7/navigation_layers = 1
+item/8/name = "Panel J (900 x 900 mm)"
+item/8/mesh = SubResource("PlaneMesh_1idep")
+item/8/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/8/mesh_cast_shadow = 1
+item/8/shapes = [SubResource("BoxShape3D_7no5o"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0015, 0)]
+item/8/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/8/navigation_layers = 1
+item/9/name = "Panel K (900 x 900 mm)"
+item/9/mesh = SubResource("PlaneMesh_6aj00")
+item/9/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/9/mesh_cast_shadow = 1
+item/9/shapes = [SubResource("BoxShape3D_mdf26"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0015, 0)]
+item/9/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/9/navigation_layers = 1
+item/10/name = "Panel L (900 x 900 mm)"
+item/10/mesh = SubResource("PlaneMesh_amvsy")
+item/10/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/10/mesh_cast_shadow = 1
+item/10/shapes = [SubResource("BoxShape3D_pxskq"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0015, 0)]
+item/10/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/10/navigation_layers = 1
+item/11/name = "Panel M (900 x 900 mm)"
+item/11/mesh = SubResource("PlaneMesh_rbx2c")
+item/11/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/11/mesh_cast_shadow = 1
+item/11/shapes = [SubResource("BoxShape3D_7kxe5"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0015, 0)]
+item/11/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/11/navigation_layers = 1
+item/12/name = "Panel N (900 x 900 mm)"
+item/12/mesh = SubResource("PlaneMesh_h7wcp")
+item/12/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/12/mesh_cast_shadow = 1
+item/12/shapes = [SubResource("BoxShape3D_7lvxe"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0015, 0)]
+item/12/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/12/navigation_layers = 1
+item/13/name = "Panel O (900 x 900 mm)"
+item/13/mesh = SubResource("PlaneMesh_cfmag")
+item/13/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/13/mesh_cast_shadow = 1
+item/13/shapes = [SubResource("BoxShape3D_g4cup"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0015, 0)]
+item/13/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/13/navigation_layers = 1
+item/14/name = "Panel P (900 x 900 mm)"
+item/14/mesh = SubResource("PlaneMesh_vvruf")
+item/14/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/14/mesh_cast_shadow = 1
+item/14/shapes = [SubResource("BoxShape3D_362kn"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0015, 0)]
+item/14/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/14/navigation_layers = 1
+item/15/name = "Panel Q (900 x 900 mm)"
+item/15/mesh = SubResource("PlaneMesh_r315i")
+item/15/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/15/mesh_cast_shadow = 1
+item/15/shapes = [SubResource("BoxShape3D_3qr7w"), Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0015, 0)]
+item/15/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/15/navigation_layers = 1
