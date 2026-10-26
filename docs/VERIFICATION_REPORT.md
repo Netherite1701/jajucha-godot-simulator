@@ -11,6 +11,9 @@ Status: **Windows x64 package built and installed for verification.** The exact 
 - The installer installed and launched from the isolated C: directory.
 - Lap road coverage: 687 samples, zero centerline off-road samples and zero footprint touches of grass or red curb.
 
+## Update check result
+
+The installed launcher `--check-updates` request reached its running updater (exit 0). A direct Velopack 1.2.161 `GithubSource` check configured for installed version 0.1.0 returned no newer stable release from the public repository. A real upgrade download/application, Later and approved-update flows, interrupted/corrupt package recovery, and rollback remain untested.
 ## Bundled controller result
 
 The supplied controller is included unchanged (SHA-256 `71bef94864c91d1286ed586d216938e21750335bf23747c852f36b83de726136`). Its installed lap check stopped after 5 of 7 checkpoints at 26.329 m near the lower-left hairpin exit. It did not crash or leave the road; the controller stopped finding a path and did not finish. The release makes no full-lap claim for that sample controller. The simulator and notebook features passed their separate checks above.
@@ -21,11 +24,12 @@ Compact test evidence is in `evidence/installed-verification-2026-10-26/`. The f
 
 - A separate clean Windows account, standard-user profile, and offline first launch were not verified.
 - Data preservation through uninstall/reinstall was not repeated on this exact Setup.
-- Two-version updater recovery remains untested; v0.1.0 is the first stable release.
+- A real version-to-version update and recovery remain untested; v0.1.0 is the first stable release.
 - Redistribution permission for the original manual-derived track artwork is not documented.
 - Stable v0.1.0 is published at `https://github.com/Netherite1701/jajucha-godot-simulator/releases/tag/v0.1.0`. The lap, clean-profile/offline, updater-recovery, and artwork-rights results below remain unresolved and are disclosed in the release notes.
 
 The package and checksums are in this `v0.1.0` folder. See `qualification.json` for the exact gate status.
+
 
 
 

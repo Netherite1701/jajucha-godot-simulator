@@ -28,7 +28,7 @@
     },
     "update_and_recovery": {
       "passed": false,
-      "evidence": "Two-version updater recovery remains untested. GitHub API returned 404 for Netherite1701/jajucha-godot-simulator."
+      "evidence": "Installed launcher --check-updates IPC reached the running updater (exit 0). An isolated Velopack 1.2.161 GithubSource query configured for installed version 0.1.0 returned no newer stable release. A real upgrade/download/apply, Later/approved flow, interrupted/corrupt package recovery, and rollback remain untested."
     },
     "installed_lap_and_road_coverage": {
       "passed": false,
