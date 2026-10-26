@@ -43,8 +43,8 @@
       "evidence": "THIRD_PARTY_NOTICES.md, CPython LICENSE.txt, and per-package license files for the locked runtime inventory are included in the candidate bundle."
     },
     "target_repository_and_publication": {
-      "passed": false,
-      "evidence": "Public source is on main and all 15 assets are in the draft release https://github.com/Netherite1701/jajucha-godot-simulator/releases/tag/untagged-a3cd3ba728126a625467; stable publication is pending remaining qualification gates."
+      "passed": true,
+      "evidence": "Stable v0.1.0 is published at https://github.com/Netherite1701/jajucha-godot-simulator/releases/tag/v0.1.0; source and release assets are available in the public repository."
     }
   },
   "current_candidate": null,
@@ -52,11 +52,13 @@
     "setup_sha256": "ad037d946b75e6b17773ee3db6b9f3bbb6a7504d42f44618f79dd7eb939523eb",
     "built_at": "2026-10-26 13:19 local",
     "installed": true,
-    "publicly_published": false,
-    "status": "v0.1.0 package uploaded as GitHub draft; stable publication pending qualification",
+    "publicly_published": true,
+    "status": "Stable v0.1.0 published; remaining qualification limitations disclosed",
     "report": "release/VERIFICATION_REPORT.md",
     "github_repository": "https://github.com/Netherite1701/jajucha-godot-simulator",
-    "source_commit": "3eb54c3",
-    "draft_release_url": "https://github.com/Netherite1701/jajucha-godot-simulator/releases/tag/untagged-a3cd3ba728126a625467"
+    "source_commit": "495ffe9",
+    "draft_release_url": "https://github.com/Netherite1701/jajucha-godot-simulator/releases/tag/untagged-a3cd3ba728126a625467",
+    "github_release_url": "https://github.com/Netherite1701/jajucha-godot-simulator/releases/tag/v0.1.0",
+    "published_on": "2026-10-26"
   }
 }

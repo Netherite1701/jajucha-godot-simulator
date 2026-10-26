@@ -1,7 +1,5 @@
 # Jajucha Competition Simulator
 
-The v0.1.0 assets are uploaded to a draft release while qualification checks continue. The permanent link will activate when the stable release is published.
-
 [Download the latest Windows installer](https://github.com/Netherite1701/jajucha-godot-simulator/releases/latest/download/JajuchaGodotSimulator-win-x64-Setup.exe)
 
 Godot 4.7.2 simulator for Windows 10/11 x64. It models the 2026 track construction manual's 41-cell GridMap and full-size 900 × 900 mm panel textures, each with 3 mm foamboard thickness. The track remains editable in `scenes/course_assembly.tscn` through the reusable mesh library.
@@ -61,5 +59,6 @@ The lap monitor requires all seven ordered checkpoints, more than 30 m of travel
 - `notebooks/`: quick-start and verified-lap notebook examples.
 
 See [verification and release gates](docs/RELEASE_GATES.md) before creating a public release. Third-party artwork and dependencies are listed in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
+
 
 

@@ -21,11 +21,12 @@ Compact test evidence is in `evidence/installed-verification-2026-10-26/`. The f
 
 - A separate clean Windows account, standard-user profile, and offline first launch were not verified.
 - Data preservation through uninstall/reinstall was not repeated on this exact Setup.
-- Two-version updater recovery remains untested; this draft has no earlier stable release to upgrade from.
+- Two-version updater recovery remains untested; v0.1.0 is the first stable release.
 - Redistribution permission for the original manual-derived track artwork is not documented.
-- The public repository exists, the source is on main, and all release assets are uploaded to a draft at `https://github.com/Netherite1701/jajucha-godot-simulator/releases/tag/untagged-a3cd3ba728126a625467`. Stable publication remains pending the failed and unverified gates below.
+- Stable v0.1.0 is published at `https://github.com/Netherite1701/jajucha-godot-simulator/releases/tag/v0.1.0`. The lap, clean-profile/offline, updater-recovery, and artwork-rights results below remain unresolved and are disclosed in the release notes.
 
 The package and checksums are in this `v0.1.0` folder. See `qualification.json` for the exact gate status.
+
 
 
 
