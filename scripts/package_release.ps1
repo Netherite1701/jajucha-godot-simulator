@@ -131,7 +131,7 @@ Copy-Item -LiteralPath $selfTestReport -Destination (Join-Path $dist "VERIFICATI
 Copy-Item -LiteralPath (Join-Path $root "docs\INSTALLATION.md") -Destination $dist
 Copy-Item -LiteralPath (Join-Path $root "docs\RELEASE_NOTES_0.1.0.md") -Destination $dist
 Copy-Item -LiteralPath (Join-Path $root "docs\LAP_VERIFICATION.md") -Destination $dist
-Copy-Item -LiteralPath (Join-Path $root "release\VERIFICATION_REPORT.md") -Destination $dist
+Copy-Item -LiteralPath (Join-Path $root "docs\VERIFICATION_REPORT.md") -Destination $dist
 $distRelease = Join-Path $dist "release"
 New-Item -ItemType Directory -Force -Path $distRelease | Out-Null
 Copy-Item -LiteralPath (Join-Path $root "release\qualification.json") -Destination $distRelease -Force

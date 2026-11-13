@@ -22,7 +22,7 @@ The notebook's `jchm.camera` gives BGR `uint8` images at 640 × 400; `jchm.lidar
 
 ## Track and calibration
 
-See [calibration.json](calibration.json) for the machine-readable register and [implementation notes](docs/IMPLEMENTATION_NOTES.md) for sources and limits. Dimensions are in metres. The track layout follows the manual's illustrated assembly; its type I/J inventory conflict and provisional vehicle dimensions are documented. Optical height measurements conflict (99.009 mm versus a 75 mm photo estimate); side camera extrinsics are not physically calibrated. Stereo depth is a simulator estimate, not a measurement of actual distance.
+See [calibration.json](calibration.json) for the machine-readable register and [implementation notes](docs/IMPLEMENTATION_NOTES.md) for sources and limits. Dimensions are in metres. The track layout follows the manual's illustrated assembly; the layout matches the manual's 41-panel inventory, and provisional vehicle dimensions are documented. Optical height measurements conflict (99.009 mm versus a 75 mm photo estimate); side camera extrinsics are not physically calibrated. Stereo depth is a simulator estimate, not a measurement of actual distance.
 
 ## Developer checks
 

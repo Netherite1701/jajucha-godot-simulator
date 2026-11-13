@@ -1,6 +1,8 @@
 # Verified full lap
 
-Verified run: `.cache/planning/fullcamera/run_20261025T231211/`.
+Evidence folders cited below are local-only (gitignored, not in the public repo) and were archived under `release/evidence-archive/from-cleanup-2026-11-13/`.
+
+Verified run: `release/evidence-archive/from-cleanup-2026-11-13/fullcamera-run-20261025T231211/`.
 
 | Check | Measured evidence |
 | --- | --- |
@@ -41,7 +43,7 @@ checks camera/chassis visibility separation, off-axis projection without
 translating the optical center, camera motion synchronization, and ramp pitch
 being absent from the flat upper straight.
 
-See `CAMERA_RECONCILIATION.md` for the reproduced blackout cause and
+See the "Camera pipeline investigation (2026-10-25)" section of `IMPLEMENTATION_NOTES.md` for the reproduced blackout cause and
 `CONTROLLER_CHANGES.md` for changes from the preserved pasted controller.
 
 To repeat the recorded verification:
@@ -63,7 +65,7 @@ The monitor reported `LAP_SUCCESS`, all seven ordered checkpoints, 32.253 m
 travel, 92.025 s simulation time, and a forward start-line crossing 42.5 mm
 forward and 25.3 mm lateral from the line. Final heading error was 3.00°.
 The run output is under the ignored
-`.cache/release-lap/evidence/laps/run_20261026T070207/` directory. The lap
+`release/evidence-archive/from-cleanup-2026-11-13/release-lap-run-20261026T070207/` directory. The lap
 monitor's independent artwork sampler checked 760 trajectory samples: zero
 centerline samples off-road and zero vehicle-footprint samples touching grass
 or red curb. This was a source-development run using local Python 3.12.4; it
@@ -72,7 +74,7 @@ application.
 
 ## Historical bundled-runtime source run (2026-10-26)
 
-Historical run: `build/release-candidate/node-lap-windowed/evidence/laps/run_20261026T083238/`. Its recorded `main.gd` SHA-256 is `c3700d55bc210b279004a98d55b86d0041fe129ed2020c3762732d717a9a0f88`, which differs from the current source. It is not evidence that the current simulator passes.
+Historical run: `release/evidence-archive/from-cleanup-2026-11-13/node-lap-windowed-run-20261026T083238/`. Its recorded `main.gd` SHA-256 is `c3700d55bc210b279004a98d55b86d0041fe129ed2020c3762732d717a9a0f88`, which differs from the current source. It is not evidence that the current simulator passes.
 
 | Check | Measured evidence |
 | --- | --- |
@@ -110,9 +112,9 @@ installed lap gate is not passed:
 
 | Run | Result | Checkpoints | Distance | Stop location |
 | --- | --- | ---: | ---: | --- |
-| `build/release-candidate/installed-lap-direct/evidence/laps/run_20261026T084105/` | `LAP_STALLED` | 2 of 7 | 13.806 m | x=1.654, z=-1.162 m |
-| `build/release-candidate/installed-lap-retry/evidence/laps/run_20261026T084219/` | `LAP_STALLED` | 0 of 7 | 5.824 m | x=4.795, z=2.623 m |
-| `build/release-candidate/installed-final-data/evidence/laps/run_20261026T090215/` | `LAP_STALLED` | 2 of 7 | 13.685 m | x=1.682, z=-1.158 m |
+| `release/evidence-archive/from-cleanup-2026-11-13/installed-lap-direct-run-20261026T084105/` | `LAP_STALLED` | 2 of 7 | 13.806 m | x=1.654, z=-1.162 m |
+| `release/evidence-archive/from-cleanup-2026-11-13/installed-lap-retry-run-20261026T084219/` | `LAP_STALLED` | 0 of 7 | 5.824 m | x=4.795, z=2.623 m |
+| `release/evidence-archive/from-cleanup-2026-11-13/installed-final-run-20261026T090215/` | `LAP_STALLED` | 2 of 7 | 13.685 m | x=1.682, z=-1.158 m |
 | `release/evidence/installed-lap-2026-10-26/` | `LAP_STALLED` | 2 of 7 | 13.607 m | x=1.709, z=-1.073 m |
 
 The latest run came from Setup artifact SHA-256
@@ -230,7 +232,7 @@ Current Setup SHA-256:
 `8bf34026f44954a0555b8d02dcb6475fd1c196ec8c9446f503489079be7b8edd`.
 It contains the unchanged supplied controller (SHA-256
 `71bef94864c91d1286ed586d216938e21750335bf23747c852f36b83de726136`), a
-20 Hz sensor sample cadence, and a simulation-only 35 degree steering tune.
+20 Hz sensor sample cadence, and a simulation-only 35 degree steering tune. The 35 degrees was a tuning assumption, not the hardware limit: the car manual gives +/-20 degrees per front wheel (p. 282).
 
 Two runs were made from the same installed Setup. The first passed all seven
 ordered gates in 33.634 m; 870 trajectory samples showed no off-road or
@@ -243,9 +245,9 @@ regaining a path. This candidate is therefore not qualified for a full-lap
 release gate despite the one successful run.
 
 Full camera captures and raw run files are preserved at
-`build/release-candidate-steering35-20hz/test-user-profile/lap-data/evidence/laps/run_20261026T125230/`
+`release/evidence-archive/from-cleanup-2026-11-13/steering35-20hz-run-20261026T125230/`
 and
-`build/release-candidate-steering35-20hz/test-user-profile/repeat2-data/evidence/laps/run_20261026T125434/`.
+`release/evidence-archive/from-cleanup-2026-11-13/steering35-20hz-repeat2-run-20261026T125434/`.
 Compact copies are under
 `release/evidence/installed-steering35-20hz-2026-10-26/`.
 
@@ -263,4 +265,4 @@ Setup SHA-256: `ad037d946b75e6b17773ee3db6b9f3bbb6a7504d42f44618f79dd7eb939523eb
 
 The installed Setup reached five of seven ordered gates and stalled at 26.329 m near the lower-left hairpin exit. It remained at the same pose with zero speed through the remaining run. Commands around the stall oscillated through large steering changes and forward, reverse, and zero speeds. The run did not reach the final two gates or cross the start line. Independent road coverage checked 687 trajectory samples and found zero centerline off-road samples and zero vehicle-footprint grass or curb contacts. The supplied controller was unchanged (SHA-256 `71bef94864c91d1286ed586d216938e21750335bf23747c852f36b83de726136`). This is a controller route-following/recovery failure and the candidate fails the lap release gate.
 
-The same exact Setup passed structural 7/7, notebook-host 5/5, notebook UI E2E, and control/shutdown checks. Compact evidence is in `release/evidence/package-candidate-notebook-fix-2026-10-26/`. Full camera output is preserved at `build/release-candidate-notebook-completion/installed-test-data/lap1/evidence/laps/run_20261026T132340/`.
+The same exact Setup passed structural 7/7, notebook-host 5/5, notebook UI E2E, and control/shutdown checks. Compact evidence is in `release/evidence/package-candidate-notebook-fix-2026-10-26/`. Full camera output is preserved at `release/evidence-archive/from-cleanup-2026-11-13/notebook-completion-lap1-run-20261026T132340/`.

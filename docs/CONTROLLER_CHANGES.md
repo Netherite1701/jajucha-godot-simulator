@@ -39,4 +39,4 @@ or any reference trajectory. Those are used only by the recorder and the lap
 verification tools.
 
 The resulting behavior is verified in the simulated scene; it does not certify
-physical vehicle handling or general obstacle detection from arbitrary colors.
+physical vehicle handling or general obstacle detection from arbitrary colors. The installed supplied controller does not complete the lap reliably; see `LAP_VERIFICATION.md` for the lap outcome.

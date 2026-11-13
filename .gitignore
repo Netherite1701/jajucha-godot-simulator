@@ -47,6 +47,9 @@ python_bridge/user_supplied_original.txt
 docs/KakaoTalk*
 docs/*.jpg.import
 
+# Historical lap evidence cited by docs; local-only, not packaged
+release/evidence-archive/
+
 # Release binaries are uploaded as GitHub Release assets, not Git objects
 release/v0.1.0/*.exe
 release/v0.1.0/*.nupkg

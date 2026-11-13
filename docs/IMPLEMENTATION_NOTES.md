@@ -34,12 +34,13 @@ tunnel is modeled with the documented 390 × 220 mm portal and 5 mm material.
 Its 260 × 98 mm upper-sheet shape is represented as four adjacent roof strips;
 the 260 mm dimension along the passage is an orientation reconstruction.
 
-## Panel-count discrepancy
+## Panel-count check
 
-The manual's printed panel inventory on p. 1 lists I=1 and J=5. Its p. 2
-assembly picture uses I=2 and J=4. Both totals are 41 panels. The project
-keeps the printed assembly locations and the 41 occupied cells. It does not
-alter tiles to force the parts inventory count.
+The manual's inventory (p. 1) and assembly drawing (p. 2) both show I=1 and
+J=5, totaling 41 panels (see `docs/manual/track-build-manual.md`).
+`INVENTORY_TILE_COUNTS` in `scripts/course_data.gd` matches. An earlier note
+claimed the inventory and assembly disagreed (I=1/J=5 versus I=2/J=4); that was
+a misreading and there is no conflict.
 
 ## Vehicle and sensors
 
@@ -60,6 +61,11 @@ alter tiles to force the parts inventory count.
 | LiDAR maximum range | 12 m | archived manual/interface notes |
 | LiDAR samples per turn | 409 (editable) | within the 300–450 manual range |
 | LiDAR height | 75 mm | provisional photo estimate |
+
+The car manual gives +/-20 degrees per front wheel at 2 degrees per unit, with
+independent servos (`docs/manual/car-manual.md`, p. 282), and 65 mm wheels
+(p. 284). The 35 degrees in `calibration.json` is a simulator tuning value, not
+a hardware figure. See "Where the simulator differs" in `docs/manual/README.md`.
 
 Wheelbase (initially 183 mm), chassis length (initially 252 mm), exact body
 depth, tire diameter (initially 80 mm visually), front-edge-to-rear-axle
@@ -106,3 +112,37 @@ the measured result in each run's `result.json`; a partial drive is not a lap.
 Hidden-tunnel planning, competition scoring, physical speed matching, and
 actual stereo calibration are not validated by a circuit in this scene.
 
+## Camera pipeline investigation (2026-10-25)
+
+Local-only evidence, not in the public repo: archived under
+`release/evidence-archive/from-cleanup-2026-11-13/`
+(`camera-reconciliation-2026-10-25/RECONCILIATION.md`,
+`camera-diagnosis-2026-10-25/`, `fullcamera-run-20261025T231211/`).
+
+Dark frames in the full-camera run were first attributed to the road leaving
+the field of view. A controlled reproduction contradicted that. At the saved
+checkpoint-07 pose (x=3.738 m, z=2.76651 m, yaw=-89.63914 deg) a stationary
+capture showed clear road; moving the vehicle 55 mm forward without updating the
+sensor camera reproduced the dark rectangle, and hiding the vehicle removed it
+(`camera-diagnosis-2026-10-25/lagging_camera.png` and
+`lagging_camera_no_vehicle.png`).
+
+Causes and fixes:
+
+- Chassis meshes used render layer 1 while the sensor cameras excluded layer 2;
+  physics collision layers do not set mesh render layers. Vehicle geometry now
+  uses layer 2, excluded from the sensor cameras.
+- Cameras below SubViewport nodes need explicit world transforms. They were
+  updated only at sensor capture, so the vehicle moved ahead between captures
+  (as of 2026-10-25: 10 Hz capture, 40 Hz motion; later work used a 20 Hz
+  sensor cadence). Transforms are now synchronized after every physics move.
+- Camera `h_offset`/`v_offset` translate the camera in space, so they were wrong
+  for principal-point shifts. An off-axis frustum now supplies the shift, and a
+  sensor-output shader applies the radial/tangential lens model so the user's
+  OpenCV undistortion receives a simulated raw image.
+- Ramp lane panels are lifted by their 3 mm thickness above the wedge to avoid
+  depth-buffer z-fighting.
+
+Per-attempt `run_<timestamp>/` folders hold captures, commands, and trajectory
+data; the lap runner reports the outcome in `result.json` and requires the whole
+ordered circuit before reporting success.
