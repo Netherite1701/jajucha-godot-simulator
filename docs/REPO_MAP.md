@@ -14,6 +14,7 @@ Layout of the repository after cleanup. "Local-only" entries are not in git
 | `.omc/` | local-only | Agent planning state | Created by the agent tooling |
 | `.config/` | local-only | dotnet tool manifest | `dotnet new tool-manifest` / tool restore |
 | `.cache/` | local-only | Build caches; keeps only `cpython-3.12.15/` (CPython source build dir), `godot-exporter/` (Godot console + export templates download used by `package_release.ps1` and CI), `godot-export-user/` (export user dir). Other content is disposable run output | `scripts/build_python_runtime.ps1`, `scripts/package_release.ps1` |
+| `CLAUDE.md` | tracked | Guide for AI coding agents: where to look, manual-digest rule, checks | - |
 | `LICENSE` | tracked | Project license | - |
 | `README.md` | tracked | Project overview and usage | - |
 | `THIRD_PARTY_NOTICES.md` | tracked | Third-party license notices | - |
